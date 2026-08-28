@@ -1,4 +1,10 @@
 // swift-tools-version:5.9
+//  Package.swift
+//  minizip-ng
+//
+//  Created by Magesh K on 28/07/26.
+//  Copyright © 2026 SideStore. All rights reserved.
+//
 
 import PackageDescription
 
@@ -79,7 +85,7 @@ let package = Package(
                 .define("HAVE_PKCRYPT", to: "1"),
                 .define("NOCRYPT"),
                 .define("NOUNCRYPT"),
-                .unsafeFlags(["-w", "-fvisibility=hidden"])
+                .unsafeFlags(["-w"])
             ],
             linkerSettings: [
                 .linkedLibrary("z")
