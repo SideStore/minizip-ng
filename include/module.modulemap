@@ -1,0 +1,4 @@
+module minizip_ng {
+    umbrella header "minizip_ng.h"
+    export *
+}
