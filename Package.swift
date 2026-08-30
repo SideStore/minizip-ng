@@ -81,10 +81,9 @@ let package = Package(
                 .define("unix", to: "1"),
                 .define("HAVE_ZLIB", to: "1"),
                 .define("ZLIB_COMPAT", to: "1"),
-                .define("HAVE_WZAES", to: "1"),
-                .define("HAVE_PKCRYPT", to: "1"),
-                .define("NOCRYPT"),
-                .define("NOUNCRYPT"),
+                .define("HAVE_WZAES", to: "1", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS])),
+                .define("HAVE_PKCRYPT", to: "1", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS])),
+                .define("MZ_ZIP_NO_ENCRYPTION", .when(platforms: [.linux, .android, .windows])),
                 .unsafeFlags(["-w"])
             ],
             linkerSettings: [

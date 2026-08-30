@@ -1,3 +1,5 @@
+#if !defined(__APPLE__)
+
 /* mz_crypt_openssl.c -- Crypto/hash functions for OpenSSL
    part of the minizip-ng project
 
@@ -723,3 +725,6 @@ void mz_crypt_hmac_delete(void **handle) {
     }
     *handle = NULL;
 }
+
+
+#endif
