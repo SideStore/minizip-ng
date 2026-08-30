@@ -21,7 +21,11 @@
 #include <stdio.h> /* fopen, fread, ... */
 #include <errno.h>
 #include <sys/stat.h> /* S_IRUSR, S_IWUSR, ... */
-#include <unistd.h>   /* open, close, ... */
+#ifndef _WIN32
+#  include <unistd.h>   /* open, close, ... */
+#else
+#  include <io.h>
+#endif
 #include <fcntl.h>    /* O_NOFOLLOW, ... */
 
 /***************************************************************************/

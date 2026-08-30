@@ -8,6 +8,8 @@
    See the accompanying LICENSE file for the full text of the license.
 */
 
+#if defined(__APPLE__)
+
 #include "mz.h"
 #include "mz_crypt.h"
 
@@ -528,3 +530,5 @@ void mz_crypt_hmac_delete(void **handle) {
     }
     *handle = NULL;
 }
+
+#endif /* __APPLE__ */
