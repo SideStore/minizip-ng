@@ -11,7 +11,13 @@
 #define HAVE_READLINK 1
 #define HAVE_ZLIB 1
 #define ZLIB_COMPAT 1
-#define HAVE_WZAES 1
-#define HAVE_PKCRYPT 1
+
+#ifndef MZ_ZIP_NO_CRYPTO
+#define MZ_ZIP_NO_CRYPTO 1
+#endif
+
+#ifndef MZ_ZIP_NO_ENCRYPTION
+#define MZ_ZIP_NO_ENCRYPTION 1
+#endif
 
 #endif
